@@ -1,0 +1,48 @@
+﻿<Window x:Class="Investment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Investment.ViewModel.Converters;assembly=Investment.ViewModel"
+        Title="MainWindow" Height="414" Width="1080">
+    <Window.Resources>
+        <!-- Value Converters -->
+        <vm:PropertyConverter x:Key="PropertyConverter" />
+        <vm:RatingConverter x:Key="RatingConverter"/>
+    </Window.Resources>
+    <Grid>
+        <!--Клиенты-->
+        <DataGrid ItemsSource="{Binding Path=Clients}" Margin="0,0,590,224" AutoGenerateColumns="False"
+                   IsSynchronizedWithCurrentItem="True" SelectedIndex="{Binding Path=SelectedClientIndex, Mode=OneWayToSource}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                <DataGridTextColumn Header="Собственность" Binding="{Binding Path=Property, UpdateSourceTrigger=PropertyChanged, 
+                    Converter={StaticResource PropertyConverter}}" />
+                <DataGridTextColumn Header="Номер" Binding="{Binding Path=TelNum, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Ценные бумаги-->
+        <DataGrid Margin="506,0,114,224" ItemsSource="{Binding Securities}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Info, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Выручка" Width="*" Binding="{Binding Path=Revenue, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Мин.покупка" Width="*" Binding="{Binding Path=MinTransaction, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Рейтинг" Width="*" Binding="{Binding Path=Rating, UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource ResourceKey=RatingConverter}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Инвестирование ценных бумаг-->
+        <DataGrid Margin="0,168,114,82" ItemsSource="{Binding Path=Clients/Investment}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Security.Info, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Прибыль" Width="*" Binding="{Binding Path=Security.Revenue, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Мин.сума" Width="*" Binding="{Binding Path=Security.MinTransaction, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Рейтинг" Width="*" Binding="{Binding Path=Security.Rating, UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource ResourceKey=RatingConverter}}"/>
+                <DataGridTextColumn Header="Котировка" Width="*" Binding="{Binding Path=Quote, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Покупка" Width="*" Binding="{Binding Path=PurchaseTime, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Продажа" Width="*" Binding="{Binding Path=SaleTime, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

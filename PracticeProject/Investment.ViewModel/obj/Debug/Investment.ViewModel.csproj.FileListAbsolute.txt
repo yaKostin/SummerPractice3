@@ -1,0 +1,13 @@
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Investment.ViewModel.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Investment.ViewModel.pdb
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Investment.Domain.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\FluentNHibernate.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\NHibernate.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Iesi.Collections.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Investment.Domain.pdb
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\FluentNHibernate.xml
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\NHibernate.xml
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\bin\Debug\Iesi.Collections.xml
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\obj\Debug\Investment.ViewModel.csprojResolveAssemblyReference.cache
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\obj\Debug\Investment.ViewModel.dll
+D:\Study\Practice3course\PracticeProject\Investment.ViewModel\obj\Debug\Investment.ViewModel.pdb

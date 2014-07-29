@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA6D292F-22EB-4B49-9FD6-7A2EC2EF72AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Investment.ViewModel</RootNamespace>
+    <AssemblyName>Investment.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClasses\ViewModelBase.cs" />
+    <Compile Include="BaseClasses\VmCollectionBase.cs" />
+    <Compile Include="BaseClasses\VmObjectBase.cs" />
+    <Compile Include="Converters\PropertyConverter.cs" />
+    <Compile Include="Converters\RatingConverter.cs" />
+    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\CollectionWrappers\ClientsVM.cs" />
+    <Compile Include="Wrappers\CollectionWrappers\InvestSecuritiesVM.cs" />
+    <Compile Include="Wrappers\CollectionWrappers\PropertiesVM.cs" />
+    <Compile Include="Wrappers\CollectionWrappers\RatingsVM.cs" />
+    <Compile Include="Wrappers\CollectionWrappers\SecuritiesVM.cs" />
+    <Compile Include="Wrappers\ObjectWrappers\ClientVM.cs" />
+    <Compile Include="Wrappers\ObjectWrappers\InvestSecurityVM.cs" />
+    <Compile Include="Wrappers\ObjectWrappers\PropertyVM.cs" />
+    <Compile Include="Wrappers\ObjectWrappers\RatingVM.cs" />
+    <Compile Include="Wrappers\ObjectWrappers\SecurityVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Investment.Domain\Investment.Domain.csproj">
+      <Project>{5A1CD8CD-EAA2-463D-9FAF-0787D8B94DCA}</Project>
+      <Name>Investment.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
